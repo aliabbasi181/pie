@@ -1,0 +1,53 @@
+import 'package:flutter/material.dart';
+import 'package:pie/dashboard/content/PieChartSample3.dart';
+//import 'package:pie_chart/pie_chart.dart';
+
+class Recepie2 extends StatefulWidget {
+  const Recepie2({Key? key}) : super(key: key);
+
+  @override
+  _Recepie2State createState() => _Recepie2State();
+}
+
+class _Recepie2State extends State<Recepie2> {
+  final dataMap = <String, double>{
+    "Flutter": 12.5,
+    "React": 12.5,
+    "Xamarin": 12.5,
+    "Ionic": 12.5,
+    "F2": 12.5,
+    "Re2act": 12.5,
+    "Xamearin": 12.5,
+    "Ionifc": 12.5,
+  };
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.white,
+        centerTitle: true,
+        title: const Text(
+          "Recepie II",
+          style: TextStyle(
+              color: Colors.black,
+              fontFamily: "Quicksand",
+              fontWeight: FontWeight.bold,
+              fontSize: 24),
+        ),
+        iconTheme: const IconThemeData(color: Colors.black),
+      ),
+      body: SingleChildScrollView(
+        child: Column(children: const [
+          // PieChart(
+          //   dataMap: dataMap,
+          //   chartType: ChartType.disc,
+          //   chartRadius: MediaQuery.of(context).size.width,
+          //   legendOptions: LegendOptions(showLegends: false),
+          // ),
+          PieChartSample3(),
+          SizedBox(height: 0),
+        ]),
+      ),
+    );
+  }
+}

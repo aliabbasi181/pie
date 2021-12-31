@@ -1,0 +1,293 @@
+import 'package:flutter/material.dart';
+
+class Recepie1 extends StatefulWidget {
+  const Recepie1({Key? key}) : super(key: key);
+
+  @override
+  _Recepie1State createState() => _Recepie1State();
+}
+
+class _Recepie1State extends State<Recepie1> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.white,
+        centerTitle: true,
+        title: const Text(
+          "Recepie I",
+          style: TextStyle(
+              color: Colors.black,
+              fontFamily: "Quicksand",
+              fontWeight: FontWeight.bold,
+              fontSize: 24),
+        ),
+        iconTheme: const IconThemeData(color: Colors.black),
+      ),
+      body: Center(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.start,
+          children: [
+            Container(
+              height: 300,
+              width: 300,
+              color: Colors.amber,
+              child: Stack(
+                children: [
+                  Recp2(),
+                ],
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class SlicePainter extends CustomPainter {
+  @override
+  void paint(Canvas canvas, Size size) {
+    final paint = Paint()..strokeWidth = 1;
+    paint.color = Colors.white;
+    paint.style = PaintingStyle.stroke;
+    final path = Path();
+    path.moveTo(300 * 1 / 2, 300 * 0.2);
+    path.lineTo(300 * 1 / 2, 300 * 1 / 2);
+    path.lineTo(300 * 4 / 5, 300 * 1 / 5);
+    path.arcToPoint(Offset(300 * 1 / 2, 300 * 0.2),
+        radius: const Radius.circular(0), clockwise: true, largeArc: true);
+    //path.lineTo(size.width * 1 / 6, size.height * 3 / 4);
+    // canvas.drawLine(Offset(size.width * 1 / 2, size.height * 1 / 4),
+    //     Offset(size.width * 1 / 6, size.height * 3 / 4), paint);
+    // canvas.drawLine(Offset(size.width * 1 / 6, size.height * 3 / 4),
+    //     Offset(size.width * 2 / 3, size.height * 3 / 4), paint);
+    canvas.drawPath(path, paint);
+  }
+
+  @override
+  bool shouldRepaint(covariant CustomPainter oldDelegate) {
+    return false;
+  }
+}
+
+class SlicePainter1 extends CustomPainter {
+  @override
+  void paint(Canvas canvas, Size size) {
+    final paint = Paint()..strokeWidth = 1;
+    paint.color = Colors.white;
+    paint.style = PaintingStyle.stroke;
+    final path = Path();
+    path.moveTo(300 * 4 / 5, 300 * 1 / 2);
+    path.lineTo(300 * 1 / 2, 300 * 1 / 2);
+    path.lineTo(300 * 4 / 5, 300 * 1 / 5);
+    path.arcToPoint(Offset(300 * 4 / 5, 300 * 1 / 2),
+        radius: const Radius.circular(0), clockwise: false, largeArc: true);
+    //path.lineTo(size.width * 1 / 6, size.height * 3 / 4);
+    // canvas.drawLine(Offset(size.width * 1 / 2, size.height * 1 / 4),
+    //     Offset(size.width * 1 / 6, size.height * 3 / 4), paint);
+    // canvas.drawLine(Offset(size.width * 1 / 6, size.height * 3 / 4),
+    //     Offset(size.width * 2 / 3, size.height * 3 / 4), paint);
+    canvas.drawPath(path, paint);
+  }
+
+  @override
+  bool shouldRepaint(covariant CustomPainter oldDelegate) {
+    return false;
+  }
+}
+
+class SlicePainter2 extends CustomPainter {
+  @override
+  void paint(Canvas canvas, Size size) {
+    final paint = Paint()..strokeWidth = 1;
+    paint.color = Colors.white;
+    paint.style = PaintingStyle.stroke;
+    final path = Path();
+    path.moveTo(size.width * 1 / 2, size.height * 1 / 2);
+    path.lineTo(size.width * 4 / 5, size.height * 0.8);
+    path.lineTo(size.width * 4 / 5, size.height * 1 / 2);
+    path.arcToPoint(Offset(size.width * 4 / 5, size.height * 1 / 2),
+        radius: const Radius.circular(0), clockwise: false, largeArc: true);
+    //path.lineTo(size.width * 1 / 6, size.height * 3 / 4);
+    // canvas.drawLine(Offset(size.width * 1 / 2, size.height * 1 / 4),
+    //     Offset(size.width * 1 / 6, size.height * 3 / 4), paint);
+    // canvas.drawLine(Offset(size.width * 1 / 6, size.height * 3 / 4),
+    //     Offset(size.width * 2 / 3, size.height * 3 / 4), paint);
+    canvas.drawPath(path, paint);
+  }
+
+  @override
+  bool shouldRepaint(covariant CustomPainter oldDelegate) {
+    return false;
+  }
+}
+
+class SlicePainter3 extends CustomPainter {
+  @override
+  void paint(Canvas canvas, Size size) {
+    final paint = Paint()..strokeWidth = 1;
+    paint.color = Colors.white;
+    paint.style = PaintingStyle.stroke;
+    final path = Path();
+    path.moveTo(size.width * 0.5, size.height * 0.5);
+    path.lineTo(size.width * 0.5, size.height * 0.8);
+    path.lineTo(size.width * 0.8, size.height * 0.8);
+    path.arcToPoint(Offset(size.width * 0.5, size.height * 0.5),
+        radius: const Radius.circular(0), clockwise: false, largeArc: true);
+    //path.lineTo(size.width * 1 / 6, size.height * 3 / 4);
+    // canvas.drawLine(Offset(size.width * 1 / 2, size.height * 1 / 4),
+    //     Offset(size.width * 1 / 6, size.height * 3 / 4), paint);
+    // canvas.drawLine(Offset(size.width * 1 / 6, size.height * 3 / 4),
+    //     Offset(size.width * 2 / 3, size.height * 3 / 4), paint);
+    canvas.drawPath(path, paint);
+  }
+
+  @override
+  bool shouldRepaint(covariant CustomPainter oldDelegate) {
+    return false;
+  }
+}
+
+class SlicePainter4 extends CustomPainter {
+  @override
+  void paint(Canvas canvas, Size size) {
+    final paint = Paint()..strokeWidth = 1;
+    paint.color = Colors.white;
+    paint.style = PaintingStyle.stroke;
+    final path = Path();
+    path.moveTo(size.width * 0.5, size.height * 0.5);
+    path.lineTo(size.width * 0.5, size.height * 0.8);
+    path.lineTo(size.width * 0.2, size.height * 0.8);
+    path.arcToPoint(Offset(size.width * 0.5, size.height * 0.5),
+        radius: const Radius.circular(0), clockwise: false, largeArc: true);
+    //path.lineTo(size.width * 1 / 6, size.height * 3 / 4);
+    // canvas.drawLine(Offset(size.width * 1 / 2, size.height * 1 / 4),
+    //     Offset(size.width * 1 / 6, size.height * 3 / 4), paint);
+    // canvas.drawLine(Offset(size.width * 1 / 6, size.height * 3 / 4),
+    //     Offset(size.width * 2 / 3, size.height * 3 / 4), paint);
+    canvas.drawPath(path, paint);
+  }
+
+  @override
+  bool shouldRepaint(covariant CustomPainter oldDelegate) {
+    return false;
+  }
+}
+
+class SlicePainter5 extends CustomPainter {
+  @override
+  void paint(Canvas canvas, Size size) {
+    final paint = Paint()..strokeWidth = 1;
+    paint.color = Colors.white;
+    paint.style = PaintingStyle.stroke;
+    final path = Path();
+    path.moveTo(size.width * 0.5, size.height * 0.5);
+    path.lineTo(size.width * 0.2, size.height * 0.8);
+    path.lineTo(size.width * 0.2, size.height * 0.5);
+    path.arcToPoint(Offset(size.width * 0.5, size.height * 0.5),
+        radius: const Radius.circular(0), clockwise: false, largeArc: true);
+    //path.lineTo(size.width * 1 / 6, size.height * 3 / 4);
+    // canvas.drawLine(Offset(size.width * 1 / 2, size.height * 1 / 4),
+    //     Offset(size.width * 1 / 6, size.height * 3 / 4), paint);
+    // canvas.drawLine(Offset(size.width * 1 / 6, size.height * 3 / 4),
+    //     Offset(size.width * 2 / 3, size.height * 3 / 4), paint);
+    canvas.drawPath(path, paint);
+  }
+
+  @override
+  bool shouldRepaint(covariant CustomPainter oldDelegate) {
+    return false;
+  }
+}
+
+class SlicePainter6 extends CustomPainter {
+  @override
+  void paint(Canvas canvas, Size size) {
+    final paint = Paint()..strokeWidth = 1;
+    paint.color = Colors.white;
+    paint.style = PaintingStyle.stroke;
+    final path = Path();
+    path.moveTo(size.width * 0.5, size.height * 0.5);
+    path.lineTo(size.width * 0.2, size.height * 0.5);
+    path.lineTo(size.width * 0.2, size.height * 0.2);
+    path.arcToPoint(Offset(size.width * 0.5, size.height * 0.5),
+        radius: const Radius.circular(0), clockwise: false, largeArc: true);
+    //path.lineTo(size.width * 1 / 6, size.height * 3 / 4);
+    // canvas.drawLine(Offset(size.width * 1 / 2, size.height * 1 / 4),
+    //     Offset(size.width * 1 / 6, size.height * 3 / 4), paint);
+    // canvas.drawLine(Offset(size.width * 1 / 6, size.height * 3 / 4),
+    //     Offset(size.width * 2 / 3, size.height * 3 / 4), paint);
+    canvas.drawPath(path, paint);
+  }
+
+  @override
+  bool shouldRepaint(covariant CustomPainter oldDelegate) {
+    return false;
+  }
+}
+
+class SlicePainter7 extends CustomPainter {
+  @override
+  void paint(Canvas canvas, Size size) {
+    final paint = Paint()..strokeWidth = 1;
+    paint.color = Colors.white;
+    paint.style = PaintingStyle.stroke;
+    final path = Path();
+    path.moveTo(size.width * 0.5, size.height * 0.5);
+    path.lineTo(size.width * 0.2, size.height * 0.2);
+    path.lineTo(size.width * 0.5, size.height * 0.2);
+    path.arcToPoint(Offset(size.width * 0.5, size.height * 0.5),
+        radius: const Radius.circular(0), clockwise: false, largeArc: true);
+    //path.lineTo(size.width * 1 / 6, size.height * 3 / 4);
+    // canvas.drawLine(Offset(size.width * 1 / 2, size.height * 1 / 4),
+    //     Offset(size.width * 1 / 6, size.height * 3 / 4), paint);
+    // canvas.drawLine(Offset(size.width * 1 / 6, size.height * 3 / 4),
+    //     Offset(size.width * 2 / 3, size.height * 3 / 4), paint);
+    canvas.drawPath(path, paint);
+  }
+
+  @override
+  bool shouldRepaint(covariant CustomPainter oldDelegate) {
+    return false;
+  }
+}
+
+class Recp1 extends StatefulWidget {
+  const Recp1({Key? key}) : super(key: key);
+
+  @override
+  _Recp1State createState() => _Recp1State();
+}
+
+class _Recp1State extends State<Recp1> {
+  @override
+  Widget build(BuildContext context) {
+    return InkWell(
+      onTap: () {
+        print("Recp 1");
+      },
+      child: CustomPaint(
+        isComplex: true,
+        painter: SlicePainter(),
+      ),
+    );
+  }
+}
+
+class Recp2 extends StatefulWidget {
+  const Recp2({Key? key}) : super(key: key);
+
+  @override
+  _Recp2State createState() => _Recp2State();
+}
+
+class _Recp2State extends State<Recp2> {
+  @override
+  Widget build(BuildContext context) {
+    return CustomPaint(
+      painter: SlicePainter1(),
+    );
+  }
+}
